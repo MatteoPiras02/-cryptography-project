@@ -63,6 +63,7 @@ namespace crittografia
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.MaximizeBox = false;
             this.Name = "Form7";
             this.Text = "Form7";
             this.ResumeLayout(false);

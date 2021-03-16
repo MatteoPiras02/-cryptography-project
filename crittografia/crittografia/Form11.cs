@@ -28,8 +28,10 @@ namespace crittografia
 
         private void button2_Click(object sender, EventArgs e)
         {
+            int p = 0;
             var watch = System.Diagnostics.Stopwatch.StartNew();
             label7.Text = "";
+            label9.Text = "";
             textBox2.Text = "";
             label5.Text = "";
             int z=0;
@@ -79,7 +81,6 @@ namespace crittografia
                                                     {
                                                         for (int a = 0; a < z; a++)
                                                         {
-                                                            //Thread.Sleep(10);
                                                             richTextBox1.Text += x[j] + x[i] + x[h] + x[g] + x[f] + x[k] + x[d] + x[c] + x[b] + x[a] + "\n";
                                                             richTextBox1.SelectionStart = richTextBox1.TextLength;
                                                             richTextBox1.ScrollToCaret();
@@ -149,7 +150,16 @@ namespace crittografia
                 label7.Text = "errore: seleziona il tipo di password";
             }
             var elapsedMs = watch.ElapsedMilliseconds/1000;
-            label9.Text = Convert.ToString(elapsedMs) + "s";
+            if(elapsedMs>60)
+            {
+                p = Convert.ToInt32(elapsedMs / 60);
+                label9.Text = Convert.ToString(p) + "m " + elapsedMs % 60 + "s";
+            }
+            else
+            {
+                label9.Text = Convert.ToString(elapsedMs) + "s";
+            }
+            
         }
 
         private void timer1_Tick(object sender, EventArgs e)

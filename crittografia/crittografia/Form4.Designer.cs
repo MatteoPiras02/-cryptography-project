@@ -314,6 +314,7 @@ namespace crittografia
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label2);
+            this.MaximizeBox = false;
             this.Name = "Form4";
             this.Text = "Form4";
             this.ResumeLayout(false);
